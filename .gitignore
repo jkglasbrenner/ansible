@@ -1,0 +1,171 @@
+# -*- mode: gitignore; -*-
+
+# ---------------------------
+# BEGIN ignore project files
+# ---------------------------
+
+*.pyc
+.vault_pass.txt
+*.retry
+
+# ---------------------------
+# BEGIN ignore basic files
+# ---------------------------
+
+# all files starting with . or ~
+.*
+~*
+
+# os generated files
+*.lnk
+*.stackdump
+[Dd]esktop.ini
+ehthumbs.db
+ehthumbs_vista.db
+Icon
+Network Trash Folder
+Temporary Items
+Thumbs.db
+$RECYCLE.BIN/
+
+# log files and databases
+*.log
+*.sql
+*.sqlite
+
+# compiled files
+*.class
+*.com
+*.dll
+*.exe
+*.o
+*.so
+
+# archived files
+*.7z
+*.bzip
+*.bz2
+*.cab
+*.gz
+*.jar
+*.lzma
+*.rar
+*.tgz
+*.zip
+*.xz
+
+# packing-only formats
+*.iso
+*.tar
+
+# package management formats
+*.dmg
+*.deb
+*.egg
+*.gem
+*.msi
+*.msm
+*.msp
+*.rpm
+*.xpi
+
+# generic project directories
+build/
+dist/
+downloads/
+etc/
+lib/
+lib64/
+out/
+parts/
+sdist/
+var/
+tmp/
+
+# ---------------------------
+# BEGIN ignore editor files
+# ---------------------------
+
+# eclipse
+*~.nib
+*.bak
+*.tmp
+local.properties
+
+# emacs
+*~
+\#*\#
+*.elc
+*.rel
+*_flymake.*
+auto-save-list
+flycheck_*.el
+tramp
+auto/
+elpa/
+eshell/
+server/
+
+# vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]*.un~
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+tags
+Session.vim
+
+# ---------------------------
+# BEGIN ignore language files
+# ---------------------------
+
+# Ansible
+*.retry
+
+# Python
+*$py.class
+*.cover
+*.egg
+*.manifest
+*.mo
+*.pot
+*.py[cod]
+*.sage.py
+*.spec
+celerybeat-schedule
+MANIFEST
+coverage.xml
+db.sqlite3
+local_settings.py
+nosetests.xml
+pip-log.txt
+pip-delete-this-directory.txt
+__pycache__/
+*.egg-info/
+develop-eggs/
+docs/_build/
+downloads/
+eggs/
+env/
+env.bak/
+ENV/
+htmlcov/
+instance/
+target/
+venv/
+venv.bak/
+wheels/
+/site
+
+# ---------------------------
+# BEGIN Whitelisted Files
+# ---------------------------
+ 
+# track these files, if they exist
+!.editorconfig
+!.gitattributes
+!.gitignore
+!.github/
+!.travis.yml
+
