@@ -1,0 +1,57 @@
+---
+- hosts: workstation
+  become: yes
+  tasks:
+  - name: Create Keepass2 Plugins directory
+    file:
+      path: "{{ keechallenge_plugins_directory }}"
+      state: directory
+  - name: Get sha256 hash of KeeChallenge.dll to check version
+    stat:
+      path: "{{ keechallenge_plugins_directory }}/KeeChallenge.dll"
+      get_checksum: true
+      checksum_algorithm: sha256
+    register: keechallenge_installed_version
+  - name: Determine if KeeChallenge needs to be installed
+    set_fact:
+      keechallenge_plugin_doesnt_exist: keechallenge_installed_version.stat.exists == false
+  - name: Download and install KeeChallenge plugin
+    echo: keechallenge_plugin_install
+    become: yes
+    get_url:
+      url: "https://github.com/brush701/keechallenge/releases/download/{{ keechallenge_version }}/KeeChallenge_{{ keechallenge_version }}.zip"
+      sha256sum: "{{ keechallenge_zip_sha256 }}"
+      dest: "{{ keechallenge_tmp_directory }}"
+      owner: "{{ ansible_user }}"
+      group: "{{ ansible_user }}"
+      mode: 0644
+    when: keechallenge_plugin_doesnt_exist
+    changed_when: keechallenge_plugin_doesnt_exist
+  - name: Unarchive the KeeChallenge zip file
+    unarchive:
+      src: "{{ keechallenge_tmp_directory }}/KeeChallenge_{{ keechallenge_version }}.zip"
+      dest: "{{ keechallenge_tmp_directory }}"
+      creates: "{{ keechallenge_tmp_directory }}/KeeChallenge_{{ keechallenge_version }}/KeeChallenge.dll"
+      copy: false
+    register: keechallenge_unarchive
+    when: keechallenge_plugin_doesnt_exist
+    changed_when: keechallenge_plugin_doesnt_exist
+  - name: Copy KeeChallenge.dll to Plugins directory
+    copy:
+      src: "{{ keechallenge_tmp_directory }}/KeeChallenge_{{ keechallenge_version }}/KeeChallenge.dll"
+      dest: "{{ keechallenge_plugins_directory }}/KeeChallenge.dll"
+      owner: "{{ ansible_user }}"
+      group: "{{ ansible_user }}"
+      mode: 0644
+    when: keechallenge_plugin_doesnt_exist
+    changed_when: keechallenge_plugin_doesnt_exist
+  - name: Copy KeeChallenge.dll.config to Plugins directory
+    copy:
+      src: "{{ keechallenge_tmp_directory }}/KeeChallenge_{{ keechallenge_version }}/KeeChallenge.dll.config"
+      dest: "{{ keechallenge_plugins_directory }}/KeeChallenge.dll.config"
+      owner: "{{ ansible_user }}"
+      group: "{{ ansible_user }}"
+      mode: 0644
+    when: keechallenge_plugin_doesnt_exist
+    changed_when: keechallenge_plugin_doesnt_exist
+...

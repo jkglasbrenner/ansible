@@ -5,12 +5,26 @@
       group_by:
         key: "{{ ansible_hostname }}"
 
+# - hosts: workstation
+#   become: yes
+#   tasks:
+#     - name: Update user groups
+#       user:
+#         name: jglasbr2
+#         groups: ansible,docker
+#         append: yes
+
 - hosts: workstation
   become: yes
   roles:
     - weareinteractive.apt
     - wtanaka.slack
     - jkglasbrenner.environment_modules
+
+- hosts: workstation
+  become: yes
+  roles:
+    - franklinkim.ufw
 
 - hosts: workstation
   become: yes

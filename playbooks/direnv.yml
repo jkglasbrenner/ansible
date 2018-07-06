@@ -1,0 +1,16 @@
+---
+- hosts: workstation
+  tasks:
+  - name: Create local stow directory if it doesn't exist
+    file: >
+      path={{ direnv.dest }}/direnv-{{ direnv.version }}
+      state=directory
+  - name: Download direnv binary file and install to local stow directory
+    get_url: >
+      url={{ direnv.base_url }}/v{{ direnv.version }}/{{ direnv.arch }}
+      sha256sum={{ direnv.bin_sha256 }}
+      dest={{ direnv.dest }}/direnv-{{ direnv.version }}/direnv
+      owner={{ ansible_user }}
+      group={{ ansible_user }}
+      mode=0755
+...

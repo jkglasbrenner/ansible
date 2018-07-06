@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: Clone gnome-terminal-colors repo
+      git:
+        repo: "https://github.com/gnumoksha/gnome-terminal-colors.git"
+        dest: /usr/local/share/gnome-terminal-colors
+...

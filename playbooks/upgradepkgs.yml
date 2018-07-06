@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+  - weareinteractive.apt
+  vars:
+    apt_upgrade: yes

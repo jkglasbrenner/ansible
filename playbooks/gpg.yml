@@ -1,0 +1,19 @@
+---
+# Based on https://blog.liw.fi/posts/2017/05/29/using_a_yubikey_4_for_ensafening_one_s_encryption/
+- hosts: local
+  tasks:
+  - name: Comment out SSH agent support in Xsession.options
+    become: yes
+    lineinfile:
+      path: /etc/X11/Xsession.options
+      state: present
+      backrefs: yes
+      regexp: '^(use-ssh-agent)$'
+      line: '# \1'
+  - name: Tell Gnome 3 to not boot up OpenSSH agent
+    become: yes
+    lineinfile:
+      path: /etc/xdg/autostart/gnome-keyring-ssh.desktop
+      line: 'Hidden=true'
+      state: present
+...
