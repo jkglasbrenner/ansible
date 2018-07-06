@@ -1,0 +1,82 @@
+---
+aiida_aiidadb_password: "{{ vault_aiida_aiidadb_password }}"
+apt_packages:
+  - aptitude
+  - arc-theme
+  - automake
+  - build-essential
+  - clang
+  - clang-format
+  - clang-tidy
+  - clang-tools
+  - cmake
+  - emacs-snapshot
+  - git
+  - git-crypt
+  - git-flow
+  - git-lfs
+  - gnome-tweaks
+  - gnupg
+  - gnupg-agent
+  - keepass2
+  - keepass2-plugin-keepasshttp
+  - libclang-dev
+  - libpng-dev
+  - libpoppler-dev
+  - libpoppler-glib-dev
+  - libpoppler-private-dev
+  - libusb-1.0-0-dev
+  - libyubikey-dev
+  - libz-dev
+  - network-manager-openconnect
+  - network-manager-openconnect-gnome
+  - numix-gtk-theme
+  - numix-icon-theme
+  - numix-icon-theme-circle
+  - openconnect
+  - pcscd
+  - pinentry-curses
+  - pinentry-gnome3
+  - pkg-config
+  - pop-theme
+  - scdaemon
+  - software-properties-common
+  - sshfs
+  - tmux
+  - vim
+  - winehq-devel
+  - xclip
+  - yubico-piv-tool
+  - yubikey-manager
+  - yubikey-manager-qt
+  - yubikey-personalization
+  - yubikey-personalization-gui
+  - yubikey-piv-manager
+  - yubioath-desktop
+apt_repositories:
+  - deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main
+# - deb http://dl.google.com/linux/chrome/deb/ stable main
+  - deb https://dl.winehq.org/wine-builds/ubuntu/ artful main
+  - ppa:jtaylor/keepass
+  - ppa:numix/ppa
+  - ppa:system76/pop
+  - ppa:ubuntu-elisp/ppa
+  - ppa:yubico/stable
+apt_keys:
+  - url: https://dl.google.com/linux/linux_signing_key.pub
+  - url: https://dl.winehq.org/wine-builds/Release.key
+keechallenge_version: 1.5
+keechallenge_zip_sha256: 7a691e37858bee3a69ba81ed1c7ce6dd42de4096dfe9cd7b7547566399d3f369
+keechallenge_dll_sha256: 83db8598afd595473b8d6f0ea8c2794c0a67e8dec30958eef415d063c0f0aa83
+keechallenge_plugins_directory: "/usr/lib/keepass2/Plugins"
+keechallenge_tmp_directory: "/tmp"
+modules_use_own_dir: ".local/Modules"
+modules_example_modulefiles_to_remove:
+  - dot
+  - module-git
+  - module-info
+  - "{{ 'null' }}"
+virtualbox_key_url: http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc
+virtualbox_key_id: 2980AECF
+virtualbox_version: 5.2
+...
