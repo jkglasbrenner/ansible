@@ -1,0 +1,20 @@
+---
+- hosts: workstation
+  roles:
+    - role: tvieira.powerline-fonts
+  vars:
+    all_users:
+      - user: jglasbr2
+        homedir: /home/jglasbr2
+    all_fonts:
+      - Cousine
+      - DejaVuSansMono
+      - DroidSansMono
+      - FiraMono
+      - Hack
+      - RobotoMono
+      - SourceCodePro
+      - Terminus
+      - Tinos
+      - UbuntuMono
+...

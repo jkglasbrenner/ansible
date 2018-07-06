@@ -8,6 +8,7 @@
 - src: jkglasbrenner.environment_modules
 - src: jkglasbrenner.miniconda
 - src: joshualund.golang
+- src: tvieira.powerline-fonts
 - src: weareinteractive.apt
 - src: wtanaka.slack
 ...
