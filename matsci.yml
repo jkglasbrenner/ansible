@@ -3,8 +3,8 @@
   roles:
     - role: jkglasbrenner.aiida
       when: matsci_run_aiida_play
-  tags:
-    - materials_science
-    - workflow
-    - aiida
+      tags:
+        - materials_science
+        - workflow
+        - aiida
 ...

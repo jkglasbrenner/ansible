@@ -1,10 +1,10 @@
 ---
-- hosts: all
+- hosts: workstation
   become: yes
   roles:
     - role: geerlingguy.postgresql
       when: databases_run_postgresql_play
-  tags:
-    - postgresql
-    - aiida
+      tags:
+        - postgresql
+        - aiida
 ...
