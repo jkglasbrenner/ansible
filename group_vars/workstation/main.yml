@@ -88,4 +88,16 @@ ufw_reset: no
 virtualbox_key_url: http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc
 virtualbox_key_id: 2980AECF
 virtualbox_version: 5.2
+
+# Activate/deactivate plays
+workstation_run_apt_play: true
+workstation_run_slack_play: true
+workstation_run_environment_modules_play: true
+workstation_run_firewall_play: true
+workstation_run_golang_play: true
+workstation_run_miniconda_play: true
+workstation_run_virtualbox_play: true
+workstation_run_vagrant_play: true
+workstation_run_docker_play: true
+matsci_run_aiida_play: false
 ...

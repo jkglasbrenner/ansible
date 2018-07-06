@@ -1,3 +1,4 @@
 ---
-# File intentionally left blank
+# Activate/deactivate plays
+databases_run_postgresql_play: false
 ...
