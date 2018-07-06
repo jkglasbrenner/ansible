@@ -1,0 +1,16 @@
+---
+# Host-specific configuration
+workstation_groups:
+  - name: ansible
+    system: true
+  - name: docker
+    system: true
+
+workstation_user_groups:
+  - "{{ ansible_user }}"
+  - adm
+  - ansible
+  - cdrom
+  - docker
+  - sudo
+...
