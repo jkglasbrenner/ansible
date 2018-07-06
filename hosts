@@ -1,0 +1,87 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+# Workstation
+# -----------
+#
+# desktops and laptops (admin privileges)
+
+local                     ansible_connection=local
+
+[workstation]
+local
+
+# High-performance computing clusters
+# -----------------------------------
+#
+# HPC clusters (no admin privileges)
+
+[hpc]
+argo.orc.gmu.edu
+tusker.unl.edu
+crane.unl.edu
+thunder.afrl.hpc.mil
+topaz.erdc.hpc.mil
+
+# CDS department classroom computers
+# ----------------------------------
+#
+# Linux computers in 249 Research Hall and 1004 Exploratory Hall (no admin privileges)
+
+[rh249]
+cds[01:16].mesa.gmu.edu
+
+[exp1004]
+exp1004-[01:21].mesa.gmu.edu
+
+# Webservers
+# ----------
+#
+# Non-VPS webservers  (no admin privileges)
+
+[mason-servers]
+mason.gmu.edu
+
+# Virtual private servers
+# -----------------------
+#
+# VPS instances (admin privileges)
+
+[figaro]
+107.170.124.7
+
+[narshe]
+104.236.121.157
+
+[monkswell]
+104.237.149.247
+
+[westeros]
+69.164.214.224
+
+[newyork-webservers:children]
+figaro
+narshe
+
+[newark-webservers:children]
+monkswell
+westeros
+
+[webservers:children]
+newyork-webservers
+newark-webservers
+
+[newark:children]
+newark-webservers
+
+[newyork:children]
+newyork-webservers
