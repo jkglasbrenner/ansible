@@ -1,0 +1,100 @@
+---
+- hosts: workstation
+  tasks:
+    - name: Load host_vars for local workstation
+      include_vars: "host_vars/{{ ansible_hostname }}.yml"
+  tags:
+    - always
+
+# - hosts: workstation
+#   become: yes
+#   tasks:
+#     - name: Update user groups
+#       user:
+#         name: jglasbr2
+#         groups: ansible,docker
+#         append: yes
+
+- hosts: workstation
+  become: yes
+  roles:
+    - role: weareinteractive.apt
+      when: workstation_run_apt_play
+  tags:
+    - packages
+    - apt
+
+- hosts: workstation
+  become: yes
+  roles:
+    - role: wtanaka.slack
+      when: workstation_run_slack_play
+  tags:
+    - communication
+    - slack
+
+- hosts: workstation
+  become: yes
+  roles:
+    - role: jkglasbrenner.environment_modules
+      when: workstation_run_environment_modules_play
+  tags:
+    - configuration
+    - modules
+
+- hosts: workstation
+  become: yes
+  roles:
+    - role: franklinkim.ufw
+      when: workstation_run_firewall_play
+  tags:
+    - firewall
+    - security
+
+- hosts: workstation
+  become: yes
+  roles:
+    - role: joshualund.golang
+      when: workstation_run_golang_play
+  tags:
+    - languages
+    - go
+
+- hosts: workstation
+  become: yes
+  roles:
+    - role: jkglasbrenner.miniconda
+      when: workstation_run_miniconda_play
+  tags:
+    - languages
+    - python
+    - miniconda
+    - aiida
+
+- hosts: workstation
+  become: yes
+  roles:
+    - role: andrewrothstein.virtualbox
+      when: workstation_run_virtualbox_play
+  tags:
+    - virtualization
+    - virtualbox
+
+- hosts: workstation
+  become: yes
+  roles:
+    - role: andrewrothstein.vagrant
+      when: workstation_run_vagrant_play
+  tags:
+    - virtualization
+    - vagrant
+
+- hosts: workstation
+  become: yes
+  roles:
+    - role: angstwad.docker_ubuntu
+      when: workstation_run_docker_play
+  tags:
+    - virtualization
+    - docker
+...
