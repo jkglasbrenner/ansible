@@ -1,0 +1,6 @@
+---
+- hosts: leopard-jkg
+  become: yes
+  roles:
+    - geerlingguy.postgresql
+...

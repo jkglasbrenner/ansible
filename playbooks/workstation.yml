@@ -1,0 +1,27 @@
+---
+- hosts: workstation
+  tasks:
+    - name: Group variables and plays on local machines using hostnames
+      group_by:
+        key: "{{ ansible_hostname }}"
+
+- hosts: workstation
+  become: yes
+  roles:
+    - weareinteractive.apt
+    - wtanaka.slack
+    - jkglasbrenner.environment_modules
+
+- hosts: workstation
+  become: yes
+  roles:
+    - joshualund.golang
+    - jkglasbrenner.miniconda
+
+- hosts: workstation
+  become: yes
+  roles:
+    - andrewrothstein.virtualbox
+    - andrewrothstein.vagrant
+    - angstwad.docker_ubuntu
+...
