@@ -1,0 +1,12 @@
+---
+- src: andrewrothstein.vagrant
+- src: andrewrothstein.virtualbox
+- src: angstwad.docker_ubuntu
+- src: geerlingguy.postgresql
+- src: jkglasbrenner.aiida
+- src: jkglasbrenner.environment_modules
+- src: jkglasbrenner.miniconda
+- src: joshualund.golang
+- src: weareinteractive.apt
+- src: wtanaka.slack
+...
