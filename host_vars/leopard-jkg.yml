@@ -1,4 +1,29 @@
 ---
+# Host-specific configuration
+workstation_groups:
+  - name: ansible
+    system: true
+  - name: docker
+    system: true
+
+workstation_user_groups:
+  - "{{ ansible_user }}"
+  - adm
+  - ansible
+  - audio
+  - cdrom
+  - datashare
+  - dip
+  - docker
+  - lpadmin
+  - plugdev
+  - pulse
+  - pulse-access
+  - scanner
+  - sudo
+  - vboxusers
+  - video
+
 # Activate/deactivate plays
 workstation_run_apt_play: false
 workstation_run_slack_play: false
