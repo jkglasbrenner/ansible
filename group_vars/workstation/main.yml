@@ -82,6 +82,7 @@ modules_example_modulefiles_to_remove:
   - module-git
   - module-info
   - "{{ 'null' }}"
+modules_version: 4.1.2
 ufw_applications:
  - name: cups
 ufw_reset: no
