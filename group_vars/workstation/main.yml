@@ -35,6 +35,7 @@ apt_packages:
   - numix-icon-theme-circle
   - openconnect
   - pcscd
+  - pcsc-tools
   - pinentry-curses
   - pinentry-gnome3
   - pkg-config
