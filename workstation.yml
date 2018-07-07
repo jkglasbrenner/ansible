@@ -81,4 +81,12 @@
       tags:
         - virtualization
         - docker
+  tasks:
+    - name: Install ripgrep
+      apt:
+        deb: "{{ ripgrep_deb_url }}"
+      when: workstation_run_ripgrep_play
+      tags:
+        - packages
+        - apt
 ...

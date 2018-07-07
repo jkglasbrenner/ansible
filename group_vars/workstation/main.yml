@@ -41,6 +41,7 @@ apt_packages:
   - pkg-config
   - pop-theme
   - scdaemon
+  - silversearcher-ag
   - software-properties-common
   - sshfs
   - tmux
@@ -84,6 +85,8 @@ modules_example_modulefiles_to_remove:
   - module-info
   - "{{ 'null' }}"
 modules_version: 4.1.2
+ripgrep_version: 0.8.1
+ripgrep_deb_url: "https://github.com/BurntSushi/ripgrep/releases/download/{{ ripgrep_version }}/ripgrep_{{ ripgrep_version }}_amd64.deb"
 ufw_applications:
  - name: cups
 ufw_reset: no
@@ -101,5 +104,6 @@ workstation_run_miniconda_play: true
 workstation_run_virtualbox_play: true
 workstation_run_vagrant_play: true
 workstation_run_docker_play: true
+workstation_run_ripgrep_play: true
 matsci_run_aiida_play: false
 ...
