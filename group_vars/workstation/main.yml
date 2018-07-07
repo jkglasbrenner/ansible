@@ -20,6 +20,7 @@ apt_packages:
   - gnupg-agent
   - keepass2
   - keepass2-plugin-keepasshttp
+  - ledger
   - libclang-dev
   - libpng-dev
   - libpoppler-dev
@@ -60,6 +61,7 @@ apt_repositories:
 # - deb http://dl.google.com/linux/chrome/deb/ stable main
   - deb https://dl.winehq.org/wine-builds/ubuntu/ artful main
   - ppa:jtaylor/keepass
+  - ppa:mbudde/ledger
   - ppa:numix/ppa
   - ppa:system76/pop
   - ppa:ubuntu-elisp/ppa
