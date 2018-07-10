@@ -35,5 +35,5 @@ workstation_run_vagrant_play: false
 workstation_run_docker_play: false
 databases_run_postgresql_play: true
 matsci_run_aiida_play: true
-workstation_run_ripgrep_play: false
+workstation_run_ripgrep_play: true
 ...
