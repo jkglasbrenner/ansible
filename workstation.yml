@@ -81,11 +81,47 @@
       tags:
         - virtualization
         - docker
+
+    - role: weareinteractive.apt
+      when:
+        - workstation_run_toggl_play
+        - ansible_distribution is match("Ubuntu")
+        - ansible_distribution_version is version("16.04", "==")
+      tags:
+        - packages
+        - apt
+      vars:
+        apt_packages: "{{ toggl_desktop_dependencies }}"
+        apt_repositories: []
+        apt_keys: []
   tasks:
     - name: Install ripgrep
       apt:
         deb: "{{ ripgrep_deb_url }}"
       when: workstation_run_ripgrep_play
+      tags:
+        - packages
+        - apt
+
+    - name: Install toggl desktop (Ubuntu 16.04)
+      apt:
+        deb: "{{ toggl_desktop_deb_url }}"
+      when:
+        - workstation_run_toggl_play
+        - ansible_distribution is match("Ubuntu")
+        - ansible_distribution_version is version("16.04", "==")
+      tags:
+        - packages
+        - apt
+
+    - name: Install toggl desktop (Ubuntu 18.04)
+      apt:
+        deb: "{{ item }}"
+      loop: "{{ toggl_desktop_deb_urls | flatten(levels=1) }}"
+      when:
+        - workstation_run_toggl_play
+        - ansible_distribution is match("Ubuntu")
+        - ansible_distribution_version is version("18.04", ">=")
       tags:
         - packages
         - apt
