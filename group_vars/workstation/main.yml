@@ -29,6 +29,8 @@ apt_packages:
   - libusb-1.0-0-dev
   - libyubikey-dev
   - libz-dev
+  - mono-complete
+  - mono-devel
   - network-manager-openconnect
   - network-manager-openconnect-gnome
   - numix-gtk-theme
@@ -60,6 +62,7 @@ apt_repositories:
   - deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main
 # - deb http://dl.google.com/linux/chrome/deb/ stable main
   - deb https://dl.winehq.org/wine-builds/ubuntu/ artful main
+  - deb https://download.mono-project.com/repo/ubuntu stable-bionic main
   - ppa:jtaylor/keepass
   - ppa:mbudde/ledger
   - ppa:numix/ppa
@@ -69,6 +72,8 @@ apt_repositories:
 apt_keys:
   - url: https://dl.google.com/linux/linux_signing_key.pub
   - url: https://dl.winehq.org/wine-builds/Release.key
+  - keyserver: keyserver.ubuntu.com
+    id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 direnv:
   version: 2.16.0
   bin_sha256: a4faa0843c01ee64e4981b30101dc620623db52ce788e2730be005164dcfd8fb
