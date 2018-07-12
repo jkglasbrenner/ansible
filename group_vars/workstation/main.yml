@@ -43,6 +43,8 @@ apt_packages:
   - pinentry-gnome3
   - pkg-config
   - pop-theme
+  - r-base
+  - r-base-dev
   - scdaemon
   - silversearcher-ag
   - software-properties-common
@@ -63,6 +65,7 @@ apt_repositories:
 # - deb http://dl.google.com/linux/chrome/deb/ stable main
   - deb https://dl.winehq.org/wine-builds/ubuntu/ artful main
   - deb https://download.mono-project.com/repo/ubuntu stable-bionic main
+  - deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/
   - ppa:jtaylor/keepass
   - ppa:mbudde/ledger
   - ppa:numix/ppa
@@ -74,6 +77,8 @@ apt_keys:
   - url: https://dl.winehq.org/wine-builds/Release.key
   - keyserver: keyserver.ubuntu.com
     id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+  - keyserver: keyserver.ubuntu.com
+    id: E298A3A825C0D65DFD57CBB651716619E084DAB9
 direnv:
   version: 2.16.0
   bin_sha256: a4faa0843c01ee64e4981b30101dc620623db52ce788e2730be005164dcfd8fb
