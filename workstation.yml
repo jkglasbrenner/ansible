@@ -125,4 +125,12 @@
       tags:
         - packages
         - apt
+
+    - name: Install RStudio
+      apt:
+        deb: "{{ rstudio_deb_url }}"
+      when: workstation_run_rstudio_play
+      tags:
+        - packages
+        - apt
 ...
