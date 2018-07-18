@@ -67,6 +67,7 @@ apt_packages:
   - yubikey-personalization-gui
   - yubikey-piv-manager
   - yubioath-desktop
+  - zotero-standalone
 apt_repositories:
   - deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main
 # - deb http://dl.google.com/linux/chrome/deb/ stable main
@@ -76,6 +77,7 @@ apt_repositories:
   - ppa:jtaylor/keepass
   - ppa:mbudde/ledger
   - ppa:numix/ppa
+  - ppa:smathot/cogscinl
   - ppa:system76/pop
   - ppa:ubuntu-elisp/ppa
   - ppa:yubico/stable
