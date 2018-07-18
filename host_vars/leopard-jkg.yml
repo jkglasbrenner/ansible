@@ -35,7 +35,12 @@ workstation_run_miniconda_play: true
 workstation_run_virtualbox_play: false
 workstation_run_vagrant_play: false
 workstation_run_docker_play: false
-databases_run_postgresql_play: true
-matsci_run_aiida_play: true
 workstation_run_ripgrep_play: true
+workstation_run_toggl_play: false
+workstation_run_rstudio_play: false
+workstation_run_jetbrains_play: false
+
+databases_run_postgresql_play: true
+
+matsci_run_aiida_play: true
 ...
