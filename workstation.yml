@@ -133,4 +133,42 @@
       tags:
         - packages
         - apt
+
+- hosts: workstation
+  remote_user: "{{ workstation_user }}"
+  pre_tasks:
+    - name: Load host_vars for local workstation
+      include_vars: "host_vars/{{ ansible_hostname }}.yml"
+      tags:
+        - always
+
+  tasks:
+    - name: JetBrains Toolbox
+      unarchive:
+        src: "{{ jetbrains_toolbox_url }}"
+        dest: "/tmp/"
+        remote_src: yes
+        creates: "{{ ansible_env.HOME }}/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox"
+      when: workstation_run_jetbrains_play
+      tags:
+        - packages
+        - apt
+
+    - name: Run JetBrains Installer
+      command: "/tmp/{{ jetbrains_toolbox_filename | quote }}/jetbrains-toolbox"
+      args:
+        creates: "{{ ansible_env.HOME }}/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox"
+      when: workstation_run_jetbrains_play
+      tags:
+        - packages
+        - apt
+
+    - name: Remove JetBrains Toolbox installer
+      file:
+        path: "/tmp/{{ jetbrains_toolbox_filename }}/"
+        state: absent
+      when: workstation_run_jetbrains_play
+      tags:
+        - packages
+        - apt
 ...
