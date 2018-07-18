@@ -25,6 +25,7 @@ apt_packages:
   - libcurl4-openssl-dev
   - libpng-dev
   - libpoppler-dev
+  - libpoppler-cpp-dev
   - libpoppler-glib-dev
   - libpoppler-private-dev
   - libssl-dev
@@ -39,8 +40,11 @@ apt_packages:
   - numix-icon-theme
   - numix-icon-theme-circle
   - openconnect
+  - libreoffice-java-common
+  - default-jre
   - pcscd
   - pcsc-tools
+  - pigz
   - pinentry-curses
   - pinentry-gnome3
   - pkg-config
@@ -55,6 +59,7 @@ apt_packages:
   - vim
   - winehq-devel
   - xclip
+  - xdotool
   - yubico-piv-tool
   - yubikey-manager
   - yubikey-manager-qt
