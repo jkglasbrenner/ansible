@@ -1,5 +1,7 @@
 ---
 # Host-specific configuration
+workstation_user: jglasbr2
+
 workstation_groups:
   - name: ansible
     system: true
