@@ -134,6 +134,14 @@
         - packages
         - apt
 
+    - name: Install pandoc
+      apt:
+        deb: "{{ pandoc_deb_url }}"
+      when: workstation_run_pandoc_play
+      tags:
+        - packages
+        - apt
+
 - hosts: workstation
   remote_user: "{{ workstation_user }}"
   pre_tasks:

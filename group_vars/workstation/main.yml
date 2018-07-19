@@ -109,6 +109,8 @@ modules_example_modulefiles_to_remove:
   - module-info
   - "{{ 'null' }}"
 modules_version: 4.1.2
+pandoc_version: 2.2.2
+pandoc_deb_url: "https://github.com/jgm/pandoc/releases/download/{{ pandoc_version }}/pandoc-{{ pandoc_version }}-1-amd64.deb"
 ripgrep_version: 0.8.1
 ripgrep_deb_url: "https://github.com/BurntSushi/ripgrep/releases/download/{{ ripgrep_version }}/ripgrep_{{ ripgrep_version }}_amd64.deb"
 rstudio_version: 1.2.792
@@ -144,6 +146,7 @@ workstation_run_docker_play: true
 workstation_run_ripgrep_play: true
 workstation_run_toggl_play: true
 workstation_run_rstudio_play: true
+workstation_run_pandoc_play: true
 workstation_run_jetbrains_play: true
 matsci_run_aiida_play: false
 ...
