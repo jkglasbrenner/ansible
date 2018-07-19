@@ -56,6 +56,8 @@ apt_packages:
   - software-properties-common
   - sshfs
   - tmux
+  - unison
+  - unison-gtk
   - vim
   - winehq-devel
   - xclip
