@@ -21,14 +21,19 @@ apt_packages:
   - keepass2
   - keepass2-plugin-keepasshttp
   - ledger
+  - libtool
+  - libcanberra-gtk-module
   - libclang-dev
   - libcurl4-openssl-dev
+  - libgdal-dev
+  - libgtk2.0-dev
   - libpng-dev
   - libpoppler-dev
   - libpoppler-cpp-dev
   - libpoppler-glib-dev
   - libpoppler-private-dev
   - libssl-dev
+  - libudunits2-dev
   - libusb-1.0-0-dev
   - libyubikey-dev
   - libz-dev
@@ -49,6 +54,7 @@ apt_packages:
   - pinentry-gnome3
   - pkg-config
   - pop-theme
+  - proj-bin
   - r-base
   - r-base-dev
   - scdaemon
