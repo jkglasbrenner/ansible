@@ -142,6 +142,34 @@
         - packages
         - apt
 
+    - name: Install apt keys
+      apt_key: "{{ item }}"
+      loop: "{{ apt_keys | flatten(1) }}"
+      tags:
+        - packages
+        - apt
+        - manualpkg
+
+    - name: Install repositories
+      apt_repository:
+        repo: "{{ item }}"
+        update_cache: no
+        state: present
+      loop: "{{ apt_repositories | flatten(1) }}"
+      tags:
+        - packages
+        - apt
+        - manualpkg
+
+    - name: Install packages
+      package:
+        name: "{{ apt_packages }}"
+        state: present
+      tags:
+        - packages
+        - apt
+        - manualpkg
+
 - hosts: workstation
   remote_user: "{{ workstation_user }}"
   pre_tasks:

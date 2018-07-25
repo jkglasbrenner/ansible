@@ -55,6 +55,7 @@ apt_packages:
   - silversearcher-ag
   - software-properties-common
   - sshfs
+  - telegram
   - tmux
   - unison
   - unison-gtk
@@ -76,6 +77,7 @@ apt_repositories:
   - deb https://dl.winehq.org/wine-builds/ubuntu/ artful main
   - deb https://download.mono-project.com/repo/ubuntu stable-bionic main
   - deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/
+  - ppa:atareao/telegram
   - ppa:jtaylor/keepass
   - ppa:mbudde/ledger
   - ppa:numix/ppa
