@@ -1,5 +1,6 @@
 ---
 - hosts: workstation
+  become: yes
   roles:
     - role: jkglasbrenner.aiida
       when: matsci_run_aiida_play
