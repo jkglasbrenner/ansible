@@ -26,12 +26,6 @@ workstation_user_groups:
   - vboxusers
   - video
 
-postgresql_global_config_options:
-  - option: unix_socket_directories
-    value: '{{ postgresql_unix_socket_directories | join(",") }}'
-  - option: data_directory
-    value: "/data/postgresql/9.5/main"
-
 # Activate/deactivate plays
 workstation_run_apt_play: false
 workstation_run_slack_play: false
