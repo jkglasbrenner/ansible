@@ -10,6 +10,7 @@ apt_packages:
   - clang-tidy
   - clang-tools
   - cmake
+  - default-jre
   - emacs-snapshot
   - git
   - git-crypt
@@ -27,6 +28,7 @@ apt_packages:
   - libcurl4-openssl-dev
   - libgdal-dev
   - libgtk2.0-dev
+  - libopenbabel-dev
   - libpng-dev
   - libpoppler-dev
   - libpoppler-cpp-dev
@@ -44,9 +46,10 @@ apt_packages:
   - numix-gtk-theme
   - numix-icon-theme
   - numix-icon-theme-circle
+  - openbabel
+  - openbabel-gui
   - openconnect
   - libreoffice-java-common
-  - default-jre
   - pcscd
   - pcsc-tools
   - pigz
@@ -61,6 +64,7 @@ apt_packages:
   - silversearcher-ag
   - software-properties-common
   - sshfs
+  - swig
   - telegram
   - tmux
   - unison
