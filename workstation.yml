@@ -179,6 +179,47 @@
         - always
 
   tasks:
+    - name: Check if Node Version Manager (NVM) is installed
+      stat:
+        path: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+      register: nvm_sh_script
+      when:
+        - workstation_run_nvm_play
+      tags:
+        - packages
+        - install_script
+
+    - name: Download Node Version Manager (NVM) installer script
+      get_url:
+        url: "{{ nvm_script_url }}"
+        dest: /tmp/nvm_install.sh
+        mode: 0755
+      when:
+        - workstation_run_nvm_play
+        - not nvm_sh_script.stat.exists
+      tags:
+        - packages
+        - install_script
+
+    - name: Run Node Version Manager installer script
+      command: ./nvm_install.sh
+      args:
+        chdir: /tmp/
+        creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+      when: workstation_run_nvm_play
+      tags:
+        - packages
+        - install_script
+
+    - name: Remove Node Version Manager installer script
+      file:
+        path: "/tmp/nvm_install.sh"
+        state: absent
+      when: workstation_run_nvm_play
+      tags:
+        - packages
+        - install_script
+
     - name: JetBrains Toolbox
       unarchive:
         src: "{{ jetbrains_toolbox_url }}"

@@ -123,6 +123,8 @@ modules_example_modulefiles_to_remove:
   - module-info
   - "{{ 'null' }}"
 modules_version: 4.1.2
+nvm_version: 0.33.11
+nvm_script_url: "https://raw.githubusercontent.com/creationix/nvm/v{{ nvm_version }}/install.sh"
 pandoc_version: 2.2.2
 pandoc_deb_url: "https://github.com/jgm/pandoc/releases/download/{{ pandoc_version }}/pandoc-{{ pandoc_version }}-1-amd64.deb"
 ripgrep_version: 0.8.1
@@ -162,5 +164,6 @@ workstation_run_toggl_play: true
 workstation_run_rstudio_play: true
 workstation_run_pandoc_play: true
 workstation_run_jetbrains_play: true
+workstation_run_nvm_play: true
 matsci_run_aiida_play: false
 ...
