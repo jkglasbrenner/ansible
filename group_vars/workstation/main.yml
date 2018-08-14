@@ -47,6 +47,7 @@ apt_packages:
   - numix-gtk-theme
   - numix-icon-theme
   - numix-icon-theme-circle
+  - obs-studio
   - openbabel
   - openbabel-gui
   - openconnect
@@ -94,6 +95,7 @@ apt_repositories:
   - ppa:jtaylor/keepass
   - ppa:mbudde/ledger
   - ppa:numix/ppa
+  - ppa:obsproject/obs-studio
   - ppa:smathot/cogscinl
   - ppa:system76/pop
   - ppa:ubuntu-elisp/ppa
@@ -107,6 +109,8 @@ apt_keys:
     id: E298A3A825C0D65DFD57CBB651716619E084DAB9
   - keyserver: keyserver.ubuntu.com
     id: ACCAF35C
+  - keyserver: keyserver.ubuntu.com
+    id: BC7345F522079769F5BBE987EFC71127F425E228
 direnv:
   version: 2.16.0
   bin_sha256: a4faa0843c01ee64e4981b30101dc620623db52ce788e2730be005164dcfd8fb
