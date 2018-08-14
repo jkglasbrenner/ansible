@@ -63,6 +63,7 @@ apt_packages:
   - r-base-dev
   - scdaemon
   - silversearcher-ag
+  - sni-qt
   - software-properties-common
   - sshfs
   - swig
