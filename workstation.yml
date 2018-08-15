@@ -142,6 +142,15 @@
         - packages
         - apt
 
+    - name: Install imaginary teleprompter
+      apt:
+        deb: "{{ imaginary_teleprompter_deb_url }}"
+      when: workstation_run_imaginary_teleprompter_play
+      tags:
+        - packages
+        - video
+        - apt
+
     - name: Install apt keys
       apt_key: "{{ item }}"
       loop: "{{ apt_keys | flatten(1) }}"

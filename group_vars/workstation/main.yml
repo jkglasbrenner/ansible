@@ -3,6 +3,7 @@ aiida_aiidadb_password: "{{ vault_aiida_aiidadb_password }}"
 apt_packages:
   - aptitude
   - arc-theme
+  - audacity
   - automake
   - build-essential
   - clang
@@ -99,6 +100,7 @@ apt_repositories:
   - ppa:smathot/cogscinl
   - ppa:system76/pop
   - ppa:ubuntu-elisp/ppa
+  - ppa:ubuntuhandbook1/audacity
   - ppa:yubico/stable
 apt_keys:
   - url: https://dl.google.com/linux/linux_signing_key.pub
@@ -136,6 +138,8 @@ nvm_version: 0.33.11
 nvm_script_url: "https://raw.githubusercontent.com/creationix/nvm/v{{ nvm_version }}/install.sh"
 pandoc_version: 2.2.2
 pandoc_deb_url: "https://github.com/jgm/pandoc/releases/download/{{ pandoc_version }}/pandoc-{{ pandoc_version }}-1-amd64.deb"
+imaginary_teleprompter_version: 2.3.4
+imaginary_teleprompter_deb_url: "https://github.com/ImaginarySense/Teleprompter-Electron/releases/download/{{ imaginary_teleprompter_version }}/imaginary-teleprompter-{{ imaginary_teleprompter_version }}-64bit.deb"
 ripgrep_version: 0.8.1
 ripgrep_deb_url: "https://github.com/BurntSushi/ripgrep/releases/download/{{ ripgrep_version }}/ripgrep_{{ ripgrep_version }}_amd64.deb"
 rstudio_version: 1.2.792
@@ -174,5 +178,6 @@ workstation_run_rstudio_play: true
 workstation_run_pandoc_play: true
 workstation_run_jetbrains_play: true
 workstation_run_nvm_play: true
+workstation_run_imaginary_teleprompter_play: true
 matsci_run_aiida_play: false
 ...
