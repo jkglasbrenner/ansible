@@ -19,6 +19,7 @@ apt_packages:
   - gnome-tweaks
   - gnupg
   - gnupg-agent
+  - inkscape
   - keepass2
   - keepass2-plugin-keepasshttp
   - ledger
@@ -52,6 +53,7 @@ apt_packages:
   - libreoffice-java-common
   - pcscd
   - pcsc-tools
+  - pdf2svg
   - pigz
   - pinentry-curses
   - pinentry-gnome3
