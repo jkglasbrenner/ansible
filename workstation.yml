@@ -179,6 +179,63 @@
         - apt
         - manualpkg
 
+    - name: Check installation status of texlive
+      stat:
+        path: "{{ texlive_dir }}/{{ texlive_version }}/bin/x86_64-linux/pdftex"
+      register: texlive_pdftex
+      when: workstation_run_texlive_installer_play
+      tags:
+        - packages
+        - latex
+        - install_script
+
+    - name: Download and unarchive texlive installer archive
+      unarchive:
+        src: "{{ texlive_url }}"
+        dest: "/tmp/"
+        remote_src: yes
+        creates: "{{ texlive_dir }}/{{ texlive_version }}/bin/x86_64-linux/pdftex"
+      when: workstation_run_texlive_installer_play
+      tags:
+        - packages
+        - latex
+        - install_script
+
+    - name: Generate texlive.profile file
+      template:
+        src: "templates/texlive.profile.j2"
+        dest: "{{ texlive_installer_dir }}/texlive.profile"
+        mode: 0644
+      when:
+        - workstation_run_texlive_installer_play
+        - not texlive_pdftex.stat.exists
+      tags:
+        - packages
+        - latex
+        - install_script
+
+    - name: Run texlive installer script
+      command: "./install-tl --profile=texlive.profile"
+      args:
+        chdir: "{{ texlive_installer_dir }}" 
+      when:
+        - workstation_run_texlive_installer_play
+        - not texlive_pdftex.stat.exists
+      tags:
+        - packages
+        - latex
+        - install_script
+
+    - name: Remove texlive installer directory
+      file:
+        path: "{{ texlive_installer_dir }}" 
+        state: absent
+      when: workstation_run_texlive_installer_play
+      tags:
+        - packages
+        - latex
+        - install_script
+
 - hosts: workstation
   remote_user: "{{ workstation_user }}"
   pre_tasks:
