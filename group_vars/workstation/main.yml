@@ -6,6 +6,7 @@ apt_packages:
   - audacity
   - automake
   - build-essential
+  - chrome-gnome-shell
   - clang
   - clang-format
   - clang-tidy
@@ -18,6 +19,9 @@ apt_packages:
   - git-crypt
   - git-flow
   - git-lfs
+  - gnome-shell-extensions
+  - gnome-shell-extension-redshift
+  - gnome-shell-extension-workspaces-to-dock
   - gnome-tweaks
   - gnupg
   - gnupg-agent
@@ -67,6 +71,7 @@ apt_packages:
   - r-base
   - r-base-dev
   - scdaemon
+  - shutter
   - silversearcher-ag
   - sni-qt
   - software-properties-common
@@ -76,6 +81,7 @@ apt_packages:
   - tmux
   - unison
   - unison-gtk
+  - variety
   - vim
   - winehq-devel
   - xclip
