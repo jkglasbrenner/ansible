@@ -13,6 +13,7 @@ apt_packages:
   - cmake
   - default-jre
   - emacs-snapshot
+  - gimp
   - git
   - git-crypt
   - git-flow
@@ -99,6 +100,7 @@ apt_repositories:
   - ppa:mbudde/ledger
   - ppa:numix/ppa
   - ppa:obsproject/obs-studio
+  - ppa:otto-kesselgulasch/gimp
   - ppa:smathot/cogscinl
   - ppa:system76/pop
   - ppa:ubuntu-elisp/ppa
