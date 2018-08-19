@@ -151,6 +151,17 @@
         - video
         - apt
 
+    - name: Install libgocanvas-common and libgocanvas3 (Ubuntu 18.04)
+      apt:
+        deb: "{{ item }}"
+      loop: "{{ shutter_ubuntu1804_dependencies_deb_urls | flatten(levels=1) }}"
+      when:
+        - ansible_distribution is match("Ubuntu")
+        - ansible_distribution_version is version("18.04", ">=")
+      tags:
+        - packages
+        - apt
+
     - name: Install apt keys
       apt_key: "{{ item }}"
       loop: "{{ apt_keys | flatten(1) }}"

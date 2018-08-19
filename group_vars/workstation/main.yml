@@ -155,6 +155,10 @@ ripgrep_deb_url: "https://github.com/BurntSushi/ripgrep/releases/download/{{ rip
 rstudio_version: 1.2.792
 rstudio_deb_url: "https://s3.amazonaws.com/rstudio-ide-build/desktop/trusty/amd64/rstudio-{{ rstudio_version }}-amd64.deb"
 rstudio_deb_md5: dd067d0ddfa7f77df4e177b2e3112a30
+shutter_ubuntu1804_dependencies_deb_urls:
+  - "https://launchpad.net/ubuntu/+archive/primary/+files/libgoocanvas-common_1.0.0-1_all.deb"
+  - "https://launchpad.net/ubuntu/+archive/primary/+files/libgoocanvas3_1.0.0-1_amd64.deb"
+  - "https://launchpad.net/ubuntu/+archive/primary/+files/libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb"
 texlive_dir: "/opt/texlive"
 texlive_version: 2018
 texlive_user_config_dir: "~/.config"
