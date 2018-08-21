@@ -14,6 +14,7 @@ apt_packages:
   - cmake
   - default-jre
   - emacs-snapshot
+  - gdebi
   - gimp
   - git
   - git-crypt
@@ -67,6 +68,8 @@ apt_packages:
   - pkg-config
   - pop-theme
   - proj-bin
+  - python-gpg
+  - python3-gpg
   - r-base
   - r-base-dev
   - scdaemon
