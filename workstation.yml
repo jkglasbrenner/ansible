@@ -7,6 +7,14 @@
       tags:
         - always
 
+    - name: Update apt cache (Ubuntu)
+      apt:
+        update_cache: yes
+        cache_valid_time: 600
+      when: ansible_distribution is match("Ubuntu")
+      tags:
+        - always
+
     - name: Ensure workstation groups exist
       group:
         name: "{{ item.name }}"
@@ -81,24 +89,23 @@
       tags:
         - virtualization
         - docker
-
-    - role: weareinteractive.apt
-      when:
-        - workstation_run_toggl_play
-        - ansible_distribution is match("Ubuntu")
-        - ansible_distribution_version is version("16.04", "==")
-      tags:
-        - packages
-        - apt
-      vars:
-        apt_packages: "{{ toggl_desktop_dependencies }}"
-        apt_repositories: []
-        apt_keys: []
   tasks:
     - name: Install ripgrep
       apt:
         deb: "{{ ripgrep_deb_url }}"
       when: workstation_run_ripgrep_play
+      tags:
+        - packages
+        - apt
+
+    - name: Install toggl dependencies (Ubuntu 16.04)
+      package:
+        name: "{{ toggl_desktop_dependencies }}"
+        state: present
+      when:
+        - workstation_run_toggl_play
+        - ansible_distribution is match("Ubuntu")
+        - ansible_distribution_version is version("16.04", "==")
       tags:
         - packages
         - apt
@@ -161,34 +168,6 @@
       tags:
         - packages
         - apt
-
-    - name: Install apt keys
-      apt_key: "{{ item }}"
-      loop: "{{ apt_keys | flatten(1) }}"
-      tags:
-        - packages
-        - apt
-        - manualpkg
-
-    - name: Install repositories
-      apt_repository:
-        repo: "{{ item }}"
-        update_cache: no
-        state: present
-      loop: "{{ apt_repositories | flatten(1) }}"
-      tags:
-        - packages
-        - apt
-        - manualpkg
-
-    - name: Install packages
-      package:
-        name: "{{ apt_packages }}"
-        state: present
-      tags:
-        - packages
-        - apt
-        - manualpkg
 
     - name: Check installation status of texlive
       stat:
