@@ -304,4 +304,13 @@
       tags:
         - packages
         - apt
-...
+
+    - name: Install Hyper
+      apt:
+        deb: "{{ hyper_term_deb_url }}"
+      when:
+        - ansible_distribution is match("Ubuntu")
+      tags:
+        - packages
+        - apt
+      

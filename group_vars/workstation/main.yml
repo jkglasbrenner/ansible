@@ -34,9 +34,11 @@ apt_packages:
   - libcanberra-gtk-module
   - libclang-dev
   - libcurl4-openssl-dev
+  - libevent-dev
   - libgdal-dev
   - libgtk2.0-dev
   - libopenbabel-dev
+  - libncurses5-dev
   - libpng-dev
   - libpoppler-dev
   - libpoppler-cpp-dev
@@ -45,6 +47,7 @@ apt_packages:
   - libssl-dev
   - libudunits2-dev
   - libusb-1.0-0-dev
+  - libutempter-dev
   - libyubikey-dev
   - libz-dev
   - mono-complete
@@ -131,6 +134,7 @@ direnv:
   arch: direnv.linux-amd64
   base_url: https://github.com/direnv/direnv/releases/download
   dest: '{{ lookup("env", "HOME") }}/.local/stow'
+hyper_term_deb_url: "https://releases.hyper.is/download/deb"
 jetbrains_toolbox_version: 1.9.3935
 jetbrains_toolbox_filename: "jetbrains-toolbox-{{ jetbrains_toolbox_version }}"
 jetbrains_toolbox_url: "https://download.jetbrains.com/toolbox/{{ jetbrains_toolbox_filename }}.tar.gz"
