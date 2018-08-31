@@ -226,6 +226,16 @@
         - latex
         - install_script
 
+    - name: Install Hyper
+      apt:
+        deb: "{{ hyper_term_deb_url }}"
+      when:
+        - ansible_distribution is match("Ubuntu")
+      tags:
+        - hyper
+        - packages
+        - apt
+
 - hosts: workstation
   remote_user: "{{ workstation_user }}"
   pre_tasks:
@@ -304,13 +314,4 @@
       tags:
         - packages
         - apt
-
-    - name: Install Hyper
-      apt:
-        deb: "{{ hyper_term_deb_url }}"
-      when:
-        - ansible_distribution is match("Ubuntu")
-      tags:
-        - packages
-        - apt
-      
+...
