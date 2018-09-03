@@ -74,6 +74,7 @@ apt_packages:
   - python-gpg
   - python-pexpect
   - python3-gpg
+  - python3-proselint
   - r-base
   - r-base-dev
   - scdaemon
