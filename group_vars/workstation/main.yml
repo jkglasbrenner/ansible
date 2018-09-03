@@ -89,6 +89,7 @@ apt_packages:
   - unison-gtk
   - variety
   - vim
+  - vim-gtk3
   - winehq-devel
   - xclip
   - xdotool
