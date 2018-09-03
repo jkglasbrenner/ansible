@@ -82,6 +82,7 @@ apt_packages:
   - silversearcher-ag
   - sni-qt
   - software-properties-common
+# - spotify-client
   - sshfs
   - swig
   - telegram
@@ -109,6 +110,7 @@ apt_repositories:
   - "deb https://download.mono-project.com/repo/ubuntu stable-{{ ansible_distribution_release }} main"
   - "deb https://cloud.r-project.org/bin/linux/ubuntu {{ ansible_distribution_release }}-cran35/"
   - "deb http://apt.insynchq.com/ubuntu {{ ansible_distribution_release }} non-free contrib"
+  - "deb http://repository.spotify.com stable non-free"
   - ppa:atareao/telegram
   - ppa:jtaylor/keepass
   - ppa:mbudde/ledger
@@ -131,6 +133,8 @@ apt_keys:
     id: ACCAF35C
   - keyserver: keyserver.ubuntu.com
     id: BC7345F522079769F5BBE987EFC71127F425E228
+  - keyserver: keyserver.ubuntu.com
+    id: 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
 direnv:
   version: 2.16.0
   bin_sha256: a4faa0843c01ee64e4981b30101dc620623db52ce788e2730be005164dcfd8fb
