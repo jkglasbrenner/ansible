@@ -72,6 +72,7 @@ apt_packages:
   - pop-theme
   - proj-bin
   - python-gpg
+  - python-pexpect
   - python3-gpg
   - r-base
   - r-base-dev
@@ -184,6 +185,13 @@ toggl_desktop_deb_urls:
 ufw_applications:
  - name: cups
 ufw_reset: no
+veracrypt_version: 1.22
+veracrypt_tar_name: "veracrypt-{{ veracrypt_version }}-setup"
+veracrypt_base_url: "https://launchpad.net/veracrypt/trunk/{{ veracrypt_version }}/+download"
+veracrypt_tar_url: "{{ veracrypt_base_url }}/{{ veracrypt_tar_name }}.tar.bz2"
+veracrypt_tar_sig: "{{ veracrypt_base_url }}/{{ veracrypt_tar_name }}.tar.bz2.sig"
+veracrypt_arch: "x64"
+veracrypt_installer: "veracrypt-{{ veracrypt_version }}-setup-console-{{ veracrypt_arch }}"
 virtualbox_key_url: http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc
 virtualbox_key_id: 2980AECF
 virtualbox_version: 5.2
@@ -206,5 +214,6 @@ workstation_run_jetbrains_play: true
 workstation_run_nvm_play: true
 workstation_run_imaginary_teleprompter_play: true
 workstation_run_texlive_installer_play: true
+workstation_run_veracrypt_play: false
 matsci_run_aiida_play: false
 ...

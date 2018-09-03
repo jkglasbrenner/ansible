@@ -236,6 +236,34 @@
         - packages
         - apt
 
+    - name: Veracrypt tarball
+      unarchive:
+        src: "{{ veracrypt_tar_url }}"
+        dest: "/tmp/"
+        remote_src: yes
+        creates: "/usr/bin/veracrypt"
+      when:
+        - workstation_run_veracrypt_play
+      tags:
+        - packages
+        - veracrypt
+
+    - name: Run veracrypt installer
+      expect:
+        command: "/tmp/{{ veracrypt_installer }} --quiet --nox11"
+        creates: "/usr/bin/veracrypt"
+        responses:
+          To\sselect,\senter\s1\sor\s2: "1"
+          Press\sEnter\sto\sdisplay: ""
+          see\sthe\srest\sof\sthe\slicense: "q"
+          yes/no: "yes"
+          Press\sEnter\sto\sexit: ""
+      when:
+        - workstation_run_veracrypt_play
+      tags:
+        - packages
+        - veracrypt
+
 - hosts: workstation
   remote_user: "{{ workstation_user }}"
   pre_tasks:
