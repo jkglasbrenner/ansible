@@ -20,31 +20,38 @@ apt_packages:
   - git-crypt
   - git-flow
   - git-lfs
-  - gnome-shell-extensions
   - gnome-shell-extension-redshift
+  - gnome-shell-extensions
   - gnome-tweaks
   - gnupg
   - gnupg-agent
+  - gstreamer1.0-libav
+  - gstreamer1.0-plugins-bad
+  - gstreamer1.0-plugins-base
+  - gstreamer1.0-plugins-good
+  - gstreamer1.0-pulseaudio
   - inkscape
   - insync
   - keepass2
   - keepass2-plugin-keepasshttp
   - ledger
-  - libtool
   - libcanberra-gtk-module
   - libclang-dev
   - libcurl4-openssl-dev
   - libevent-dev
   - libgdal-dev
   - libgtk2.0-dev
-  - libopenbabel-dev
   - libncurses5-dev
+  - libntfs-3g88
+  - libopenbabel-dev
   - libpng-dev
-  - libpoppler-dev
   - libpoppler-cpp-dev
+  - libpoppler-dev
   - libpoppler-glib-dev
   - libpoppler-private-dev
+  - libreoffice-java-common
   - libssl-dev
+  - libtool
   - libudunits2-dev
   - libusb-1.0-0-dev
   - libutempter-dev
@@ -54,6 +61,7 @@ apt_packages:
   - mono-devel
   - network-manager-openconnect
   - network-manager-openconnect-gnome
+  - ntfs-3g-dev
   - numix-gtk-theme
   - numix-icon-theme
   - numix-icon-theme-circle
@@ -61,9 +69,8 @@ apt_packages:
   - openbabel
   - openbabel-gui
   - openconnect
-  - libreoffice-java-common
-  - pcscd
   - pcsc-tools
+  - pcscd
   - pdf2svg
   - pigz
   - pinentry-curses
@@ -82,7 +89,7 @@ apt_packages:
   - silversearcher-ag
   - sni-qt
   - software-properties-common
-# - spotify-client
+  - spotify-client
   - sshfs
   - swig
   - telegram
@@ -104,13 +111,13 @@ apt_packages:
   - yubioath-desktop
   - zotero-standalone
 apt_repositories:
+  - "deb http://apt.insynchq.com/ubuntu {{ ansible_distribution_release }} non-free contrib"
   - "deb http://ppa.launchpad.net/ansible/ansible/ubuntu {{ ansible_distribution_release }} main"
-# - deb http://dl.google.com/linux/chrome/deb/ stable main
+  - "deb http://repository.spotify.com stable non-free"
+  - "deb https://cloud.r-project.org/bin/linux/ubuntu {{ ansible_distribution_release }}-cran35/"
   - "deb https://dl.winehq.org/wine-builds/ubuntu/ artful main"
   - "deb https://download.mono-project.com/repo/ubuntu stable-{{ ansible_distribution_release }} main"
-  - "deb https://cloud.r-project.org/bin/linux/ubuntu {{ ansible_distribution_release }}-cran35/"
-  - "deb http://apt.insynchq.com/ubuntu {{ ansible_distribution_release }} non-free contrib"
-  - "deb http://repository.spotify.com stable non-free"
+# - deb http://dl.google.com/linux/chrome/deb/ stable main
   - ppa:atareao/telegram
   - ppa:jtaylor/keepass
   - ppa:mbudde/ledger
