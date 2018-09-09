@@ -235,6 +235,16 @@
         - hyper
         - packages
 
+    - name: Install GitKraken
+      apt:
+        deb: "{{ gitkraken_deb_url }}"
+      when:
+        - ansible_distribution is match("Ubuntu")
+      tags:
+        - gitkraken
+        - git
+        - packages
+
     - name: Veracrypt tarball
       unarchive:
         src: "{{ veracrypt_tar_url }}"

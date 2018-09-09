@@ -148,6 +148,8 @@ direnv:
   arch: direnv.linux-amd64
   base_url: https://github.com/direnv/direnv/releases/download
   dest: '{{ lookup("env", "HOME") }}/.local/stow'
+gitkraken_arch: amd64
+gitkraken_deb_url: "https://release.gitkraken.com/linux/gitkraken-{{ gitkraken_arch }}.deb"
 hyper_term_deb_url: "https://releases.hyper.is/download/deb"
 jetbrains_toolbox_version: 1.9.3935
 jetbrains_toolbox_filename: "jetbrains-toolbox-{{ jetbrains_toolbox_version }}"
