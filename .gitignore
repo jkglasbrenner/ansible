@@ -7,6 +7,9 @@
 *.pyc
 .vault_pass.txt
 *.retry
+bin/
+include/
+pip-selfcheck.json
 
 # ---------------------------
 # BEGIN ignore basic files
