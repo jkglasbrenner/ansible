@@ -245,6 +245,61 @@
         - git
         - packages
 
+    - name: Check for CCTools installation 
+      stat:
+        path: "{{ cctools_install_dir }}/bin/makeflow"
+      register: cctools_makeflow
+      when:
+        - workstation_run_cctools_play
+      tags:
+        - packages
+        - cctools
+
+    - name: CCTools tarball
+      unarchive:
+        src: "{{ cctools_url }}"
+        dest: "/tmp/"
+        remote_src: yes
+      when:
+        - workstation_run_cctools_play
+        - not cctools_makeflow.stat.exists
+      tags:
+        - packages
+        - cctools
+
+    - name: CCTools configure
+      command: "./configure --prefix {{ cctools_install_dir }}"
+      args:
+        chdir: "/tmp/{{ cctools_unarchived_dir }}"
+      when:
+        - workstation_run_cctools_play
+        - not cctools_makeflow.stat.exists
+      tags:
+        - packages
+        - cctools
+
+    - name: CCTools make
+      make:
+        chdir: "/tmp/{{ cctools_unarchived_dir }}"
+        target: install
+        params:
+          MAKE: "make -j4"
+      when:
+        - workstation_run_cctools_play
+        - not cctools_makeflow.stat.exists
+      tags:
+        - packages
+        - cctools
+
+    - name: Remove CCTools build directory
+      file:
+        path: "/tmp/{{ cctools_unarchived_dir }}"
+        state: absent
+      when: workstation_run_cctools_play
+      tags:
+        - packages
+        - cctools
+
     - name: Veracrypt tarball
       unarchive:
         src: "{{ veracrypt_tar_url }}"

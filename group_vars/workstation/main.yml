@@ -1,6 +1,7 @@
 ---
 aiida_aiidadb_password: "{{ vault_aiida_aiidadb_password }}"
 apt_packages:
+  - 2to3
   - aptitude
   - arc-theme
   - audacity
@@ -14,6 +15,8 @@ apt_packages:
   - cmake
   - default-jre
   - emacs-snapshot
+  - fuse
+  - fuse-convmvfs
   - gdebi
   - gimp
   - git
@@ -39,11 +42,13 @@ apt_packages:
   - libclang-dev
   - libcurl4-openssl-dev
   - libevent-dev
+  - libfuse-dev
   - libgdal-dev
   - libgtk2.0-dev
   - libncurses5-dev
   - libntfs-3g88
   - libopenbabel-dev
+  - libperl-dev
   - libpng-dev
   - libpoppler-cpp-dev
   - libpoppler-dev
@@ -80,6 +85,7 @@ apt_packages:
   - proj-bin
   - python-gpg
   - python-pexpect
+  - python3-dev
   - python3-gpg
   - python3-proselint
   - r-base
@@ -142,6 +148,10 @@ apt_keys:
     id: BC7345F522079769F5BBE987EFC71127F425E228
   - keyserver: keyserver.ubuntu.com
     id: 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
+cctools_version: 7.0.4
+cctools_install_dir: "/opt/cctools/gcc/{{ cctools_version }}"
+cctools_url: "https://github.com/cooperative-computing-lab/cctools/archive/release/{{ cctools_version }}.tar.gz"
+cctools_unarchived_dir: "cctools-release-{{ cctools_version }}"
 direnv:
   version: 2.16.0
   bin_sha256: a4faa0843c01ee64e4981b30101dc620623db52ce788e2730be005164dcfd8fb
@@ -229,6 +239,7 @@ workstation_run_jetbrains_play: true
 workstation_run_nvm_play: true
 workstation_run_imaginary_teleprompter_play: true
 workstation_run_texlive_installer_play: true
+workstation_run_cctools_play: true
 workstation_run_veracrypt_play: false
 matsci_run_aiida_play: false
 ...
