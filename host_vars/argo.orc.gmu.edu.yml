@@ -2,29 +2,8 @@
 # Host-specific configuration
 workstation_user: jglasbr2
 
-workstation_groups:
-  - name: ansible
-    system: true
-  - name: docker
-    system: true
-
-workstation_user_groups:
-  - "{{ ansible_user }}"
-  - adm
-  - ansible
-  - audio
-  - cdrom
-  - datashare
-  - dip
-  - docker
-  - lpadmin
-  - plugdev
-  - pulse
-  - pulse-access
-  - scanner
-  - sudo
-  - vboxusers
-  - video
+cctools_build_dir: "/scratch/{{ ansible_user }}"
+modulefiles_dir: '{{ lookup("env", "HOME") }}/privatemodules'
 
 # Activate/deactivate plays
 workstation_run_apt_play: false
@@ -39,9 +18,14 @@ workstation_run_ripgrep_play: true
 workstation_run_toggl_play: false
 workstation_run_rstudio_play: false
 workstation_run_jetbrains_play: false
+workstation_run_nvm_play: false
 workstation_run_texlive_installer_play: false
+workstation_run_hyper_play: false
+workstation_run_gitkraken_play: false
+workstation_run_cctools_play: true
+workstation_run_veracrypt_play: false
 
-databases_run_postgresql_play: true
+databases_run_postgresql_play: false
 
-matsci_run_aiida_play: true
+matsci_run_aiida_play: false
 ...

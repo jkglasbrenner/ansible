@@ -136,7 +136,9 @@
     - name: Install RStudio
       apt:
         deb: "{{ rstudio_deb_url }}"
-      when: workstation_run_rstudio_play
+      when:
+        - workstation_run_rstudio_play
+        - ansible_distribution is match("Ubuntu")
       tags:
         - packages
         - r
@@ -145,7 +147,9 @@
     - name: Install pandoc
       apt:
         deb: "{{ pandoc_deb_url }}"
-      when: workstation_run_pandoc_play
+      when:
+        - workstation_run_pandoc_play
+        - ansible_distribution is match("Ubuntu")
       tags:
         - packages
         - pandoc
@@ -153,7 +157,9 @@
     - name: Install imaginary teleprompter
       apt:
         deb: "{{ imaginary_teleprompter_deb_url }}"
-      when: workstation_run_imaginary_teleprompter_play
+      when:
+        - workstation_run_imaginary_teleprompter_play
+        - ansible_distribution is match("Ubuntu")
       tags:
         - teleprompter
         - packages
@@ -230,6 +236,7 @@
       apt:
         deb: "{{ hyper_term_deb_url }}"
       when:
+        - workstation_run_hyper_play
         - ansible_distribution is match("Ubuntu")
       tags:
         - hyper
@@ -239,6 +246,7 @@
       apt:
         deb: "{{ gitkraken_deb_url }}"
       when:
+        - workstation_run_gitkraken_play
         - ansible_distribution is match("Ubuntu")
       tags:
         - gitkraken
@@ -258,7 +266,7 @@
     - name: CCTools tarball
       unarchive:
         src: "{{ cctools_url }}"
-        dest: "/tmp/"
+        dest: "{{ cctools_build_dir }}/"
         remote_src: yes
       when:
         - workstation_run_cctools_play
@@ -270,7 +278,7 @@
     - name: CCTools configure
       command: "./configure --prefix {{ cctools_install_dir }}"
       args:
-        chdir: "/tmp/{{ cctools_unarchived_dir }}"
+        chdir: "{{ cctools_build_dir }}/{{ cctools_unarchived_dir }}"
       when:
         - workstation_run_cctools_play
         - not cctools_makeflow.stat.exists
@@ -280,7 +288,7 @@
 
     - name: CCTools make
       make:
-        chdir: "/tmp/{{ cctools_unarchived_dir }}"
+        chdir: "{{ cctools_build_dir }}/{{ cctools_unarchived_dir }}"
         target: install
         params:
           MAKE: "make -j4"
@@ -293,7 +301,7 @@
 
     - name: Remove CCTools build directory
       file:
-        path: "/tmp/{{ cctools_unarchived_dir }}"
+        path: "{{ cctools_build_dir }}/{{ cctools_unarchived_dir }}"
         state: absent
       when: workstation_run_cctools_play
       tags:

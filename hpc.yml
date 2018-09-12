@@ -1,0 +1,66 @@
+---
+- hosts: workstation
+  become: no
+  pre_tasks:
+    - name: Load host_vars for local workstation
+      include_vars: "host_vars/{{ ansible_hostname }}.yml"
+      tags:
+        - always
+
+  tasks:
+    - name: Check for CCTools installation 
+      stat:
+        path: "{{ cctools_install_dir }}/bin/makeflow"
+      register: cctools_makeflow
+      tags:
+        - packages
+        - cctools
+
+    - name: CCTools tarball
+      unarchive:
+        src: "{{ cctools_url }}"
+        dest: "{{ cctools_build_dir }}/"
+        remote_src: yes
+      when: not cctools_makeflow.stat.exists
+      tags:
+        - packages
+        - cctools
+
+    - name: CCTools configure
+      command: "./configure --prefix {{ cctools_install_dir }}"
+      args:
+        chdir: "{{ cctools_build_dir }}/{{ cctools_unarchived_dir }}"
+      when: not cctools_makeflow.stat.exists
+      tags:
+        - packages
+        - cctools
+
+    - name: CCTools make
+      make:
+        chdir: "{{ cctools_build_dir }}/{{ cctools_unarchived_dir }}"
+        target: install
+        params:
+          MAKE: "make -j4"
+      when: not cctools_makeflow.stat.exists
+      tags:
+        - packages
+        - cctools
+
+    - name: Remove CCTools build directory
+      file:
+        path: "{{ cctools_build_dir }}/{{ cctools_unarchived_dir }}"
+        state: absent
+      tags:
+        - packages
+        - cctools
+
+    - name: Generate CCTools module file
+      template:
+        src: "templates/modulefile_cctools.j2"
+        dest: "{{ modulefiles_dir }}/cctools/{{ cctools_version }}"
+        mode: 0644
+      tags:
+        - packages
+        - cctools
+        - modulefiles
+...

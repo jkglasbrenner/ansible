@@ -1,0 +1,38 @@
+#%Module########################################
+##
+## CCTools
+##
+## URL
+## CATEGORY Workflow
+## Category: Workflow
+
+set _module_name  [module-info name]
+
+proc ModulesHelp { } {
+global _module_name
+puts stderr "The $_module_name modulefile defines the default system paths"
+puts stderr "and environment variables needed to use the $_module_name libraries"
+puts stderr "and tools."
+}
+
+conflict cctools
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys           [uname sysname]
+set os            [uname release]
+set mach          [uname machine]
+
+set cctools_dir     {{ cctools_install_dir }}
+set cctools_dir_BIN $cctools_dir/bin
+set cctools_dir_INC $cctools_dir/include
+set cctools_dir_MAN $cctools_dir/share/man
+set cctools_dir_LIB $cctools_dir/lib
+#################################################
+#
+
+ setenv          CCTOOLS_VERSION {{ cctools_version }}
+ prepend-path    PATH    $cctools_dir_BIN
+ prepend-path    CPATH   $cctools_dir_INC
+ prepend-path    MANPATH $cctools_dir_MAN
+ prepend-path    LD_LIBRARY_PATH $cctools_dir_LIB

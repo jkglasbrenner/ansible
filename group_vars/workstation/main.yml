@@ -149,6 +149,7 @@ apt_keys:
   - keyserver: keyserver.ubuntu.com
     id: 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
 cctools_version: 7.0.4
+cctools_build_dir: "/tmp"
 cctools_install_dir: "/opt/cctools/gcc/{{ cctools_version }}"
 cctools_url: "https://github.com/cooperative-computing-lab/cctools/archive/release/{{ cctools_version }}.tar.gz"
 cctools_unarchived_dir: "cctools-release-{{ cctools_version }}"
@@ -241,5 +242,7 @@ workstation_run_imaginary_teleprompter_play: true
 workstation_run_texlive_installer_play: true
 workstation_run_cctools_play: true
 workstation_run_veracrypt_play: false
+workstation_run_hyper_play: true
+workstation_run_gitkraken_play: true
 matsci_run_aiida_play: false
 ...
