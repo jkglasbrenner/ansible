@@ -37,7 +37,7 @@ workstation_run_vagrant_play: false
 workstation_run_docker_play: false
 workstation_run_ripgrep_play: true
 workstation_run_toggl_play: false
-workstation_run_rstudio_play: false
+workstation_run_rstudio_play: true
 workstation_run_jetbrains_play: false
 workstation_run_texlive_installer_play: false
 
