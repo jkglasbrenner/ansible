@@ -185,9 +185,9 @@ imaginary_teleprompter_version: 2.3.4
 imaginary_teleprompter_deb_url: "https://github.com/ImaginarySense/Teleprompter-Electron/releases/download/{{ imaginary_teleprompter_version }}/imaginary-teleprompter-{{ imaginary_teleprompter_version }}-64bit.deb"
 ripgrep_version: 0.8.1
 ripgrep_deb_url: "https://github.com/BurntSushi/ripgrep/releases/download/{{ ripgrep_version }}/ripgrep_{{ ripgrep_version }}_amd64.deb"
-rstudio_version: 1.2.792
+rstudio_version: 1.2.1013
 rstudio_deb_url: "https://s3.amazonaws.com/rstudio-ide-build/desktop/trusty/amd64/rstudio-{{ rstudio_version }}-amd64.deb"
-rstudio_deb_md5: dd067d0ddfa7f77df4e177b2e3112a30
+rstudio_deb_md5: d7a458f7c5f9d0897555d9d013b30cd5
 shutter_ubuntu1804_dependencies_deb_urls:
   - "https://launchpad.net/ubuntu/+archive/primary/+files/libgoocanvas-common_1.0.0-1_all.deb"
   - "https://launchpad.net/ubuntu/+archive/primary/+files/libgoocanvas3_1.0.0-1_amd64.deb"
