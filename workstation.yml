@@ -253,6 +253,17 @@
         - git
         - packages
 
+    - name: Install GitHub Classroom Assistant
+      apt:
+        deb: "{{ github_classroom_assistant_deb_url }}"
+      when:
+        - workstation_run_github_classroom_assistant_play
+        - ansible_distribution is match("Ubuntu")
+      tags:
+        - github_assistant
+        - git
+        - packages
+
     - name: Check for CCTools installation 
       stat:
         path: "{{ cctools_install_dir }}/bin/makeflow"
