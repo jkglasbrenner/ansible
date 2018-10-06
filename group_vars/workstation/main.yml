@@ -90,6 +90,7 @@ apt_packages:
   - python3-proselint
   - r-base
   - r-base-dev
+  - rename
   - scdaemon
   - shutter
   - silversearcher-ag
@@ -99,7 +100,6 @@ apt_packages:
   - sshfs
   - swig
   - telegram
-  - tmux
   - unison
   - unison-gtk
   - variety
