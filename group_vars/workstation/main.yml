@@ -14,6 +14,7 @@ apt_packages:
   - clang-tools
   - cmake
   - default-jre
+  - dos2unix
   - emacs-snapshot
   - fuse
   - fuse-convmvfs
