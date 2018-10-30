@@ -132,6 +132,7 @@ apt_repositories:
   - "deb https://dl.winehq.org/wine-builds/ubuntu/ artful main"
   - "deb https://download.mono-project.com/repo/ubuntu stable-{{ ansible_distribution_release }} main"
 # - deb http://dl.google.com/linux/chrome/deb/ stable main
+  - ppa:aacebedo/fasd
   - ppa:atareao/telegram
   - ppa:jtaylor/keepass
   - ppa:mbudde/ledger
