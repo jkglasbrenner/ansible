@@ -47,6 +47,7 @@ apt_packages:
   - libgdal-dev
   - libgtk2.0-dev
   - libncurses5-dev
+  - libncursesw5-dev
   - libntfs-3g88
   - libopenbabel-dev
   - libperl-dev
@@ -67,6 +68,7 @@ apt_packages:
   - mono-devel
   - network-manager-openconnect
   - network-manager-openconnect-gnome
+  - nnn
   - ntfs-3g-dev
   - numix-gtk-theme
   - numix-icon-theme
@@ -133,6 +135,7 @@ apt_repositories:
   - ppa:otto-kesselgulasch/gimp
   - ppa:smathot/cogscinl
   - ppa:system76/pop
+  - ppa:twodopeshaggy/jarun
   - ppa:ubuntu-elisp/ppa
   - ppa:ubuntuhandbook1/audacity
   - ppa:yubico/stable
