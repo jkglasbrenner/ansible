@@ -34,6 +34,7 @@ apt_packages:
   - gstreamer1.0-plugins-base
   - gstreamer1.0-plugins-good
   - gstreamer1.0-pulseaudio
+  - htop
   - inkscape
   - insync
   - keepass2
@@ -64,8 +65,10 @@ apt_packages:
   - libutempter-dev
   - libyubikey-dev
   - libz-dev
+  - mc
   - mono-complete
   - mono-devel
+  - mtr
   - network-manager-openconnect
   - network-manager-openconnect-gnome
   - nnn
@@ -86,6 +89,7 @@ apt_packages:
   - pkg-config
   - pop-theme
   - proj-bin
+  - pydf
   - python-gpg
   - python-pexpect
   - python3-dev
