@@ -35,6 +35,7 @@ apt_packages:
   - gstreamer1.0-plugins-bad
   - gstreamer1.0-plugins-base
   - gstreamer1.0-plugins-good
+  - gstreamer1.0-plugins-ugly
   - gstreamer1.0-pulseaudio
   - htop
   - inkscape
@@ -45,6 +46,9 @@ apt_packages:
   - libcanberra-gtk-module
   - libclang-dev
   - libcurl4-openssl-dev
+  - libdvd-pkg
+  - libdvdnav4
+  - libdvdread4
   - libevent-dev
   - libfuse-dev
   - libgdal-dev
@@ -115,6 +119,7 @@ apt_packages:
   - variety
   - vim
   - vim-gtk3
+  - vlc
   - winehq-devel
   - xclip
   - xdotool
