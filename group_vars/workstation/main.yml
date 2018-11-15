@@ -86,6 +86,7 @@ apt_packages:
   - openbabel
   - openbabel-gui
   - openconnect
+  - ppa-purge
   - pcsc-tools
   - pcscd
   - pdf2svg
