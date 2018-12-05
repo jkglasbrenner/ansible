@@ -16,6 +16,7 @@ apt_packages:
   - default-jre
   - dos2unix
   - emacs-snapshot
+  - enscript
   - fasd
   - ffmpeg
   - fuse
