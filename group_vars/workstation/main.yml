@@ -90,6 +90,7 @@ apt_packages:
   - openbabel
   - openbabel-gui
   - openconnect
+  - openmpi-bin
   - ppa-purge
   - pcsc-tools
   - pcscd
