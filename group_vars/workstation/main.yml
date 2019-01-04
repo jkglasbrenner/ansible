@@ -42,6 +42,7 @@ apt_packages:
   - htop
   - inkscape
   - insync
+  - intel-mkl-64bit-2019.1-053
   - keepass2
   - keepass2-plugin-keepasshttp
   - ledger
@@ -76,6 +77,7 @@ apt_packages:
   - mc
   - mono-complete
   - mono-devel
+  - mpi-default-dev
   - mtr
   - network-manager-openconnect
   - network-manager-openconnect-gnome
@@ -141,6 +143,7 @@ apt_repositories:
   - "deb https://cloud.r-project.org/bin/linux/ubuntu {{ ansible_distribution_release }}-cran35/"
   - "deb https://dl.winehq.org/wine-builds/ubuntu/ artful main"
   - "deb https://download.mono-project.com/repo/ubuntu stable-{{ ansible_distribution_release }} main"
+  - "deb https://apt.repos.intel.com/mkl all main"
 # - deb http://dl.google.com/linux/chrome/deb/ stable main
 # - ppa:aacebedo/fasd
   - ppa:atareao/telegram
@@ -158,6 +161,7 @@ apt_repositories:
 apt_keys:
   - url: https://dl.google.com/linux/linux_signing_key.pub
   - url: https://dl.winehq.org/wine-builds/Release.key
+  - url: https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
   - keyserver: keyserver.ubuntu.com
     id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
   - keyserver: keyserver.ubuntu.com
