@@ -119,6 +119,7 @@ apt_packages:
   - sshfs
   - swig
   - telegram
+  - ttf-mscorefonts-installer
   - ubuntu-restricted-extras
   - unison
   - unison-gtk
