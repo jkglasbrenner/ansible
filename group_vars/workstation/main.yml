@@ -27,6 +27,7 @@ apt_packages:
   - git-crypt
   - git-flow
   - git-lfs
+  - gnome-calculator
   - gnome-shell-extension-redshift
   - gnome-shell-extensions
   - gnome-tweaks
