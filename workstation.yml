@@ -264,6 +264,17 @@
         - git
         - packages
 
+    - name: Install GitHub Desktop Linux Fork
+      apt:
+        deb: "{{ github_desktop_linux_deb_url }}"
+      when:
+        - workstation_run_github_desktop_linux_play
+        - ansible_distribution is match("Ubuntu")
+      tags:
+        - github_desktop
+        - git
+        - packages
+
     - name: Check for CCTools installation 
       stat:
         path: "{{ cctools_install_dir }}/bin/makeflow"
