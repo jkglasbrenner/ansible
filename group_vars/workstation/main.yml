@@ -47,6 +47,7 @@ apt_packages:
   - keepass2
   - keepass2-plugin-keepasshttp
   - ledger
+  - libboost-all-dev
   - libcanberra-gtk-module
   - libclang-dev
   - libcurl4-openssl-dev
@@ -56,23 +57,34 @@ apt_packages:
   - libevent-dev
   - libfuse-dev
   - libgdal-dev
+  - libgirepository1.0-dev
+  - libglibmm-2.4-dev
+  - libgmime-2.6-dev
+  - libgmime-3.0-dev
   - libgtk2.0-dev
+  - libgtkmm-3.0-dev
   - libncurses5-dev
   - libncursesw5-dev
+  - libnotmuch-dev
   - libntfs-3g88
   - libopenbabel-dev
+  - libpeas-dev
   - libperl-dev
   - libpng-dev
   - libpoppler-cpp-dev
   - libpoppler-dev
   - libpoppler-glib-dev
   - libpoppler-private-dev
+  - libprotobuf-dev
   - libreoffice-java-common
+  - libsass-dev
   - libssl-dev
   - libtool
   - libudunits2-dev
   - libusb-1.0-0-dev
   - libutempter-dev
+  - libvte-2.91-dev
+  - libwebkit2gtk-4.0-dev
   - libyubikey-dev
   - libz-dev
   - mc
@@ -82,6 +94,7 @@ apt_packages:
   - mtr
   - network-manager-openconnect
   - network-manager-openconnect-gnome
+  - ninja-build
   - nnn
   - ntfs-3g-dev
   - numix-gtk-theme
@@ -92,7 +105,6 @@ apt_packages:
   - openbabel-gui
   - openconnect
   - openmpi-bin
-  - ppa-purge
   - pcsc-tools
   - pcscd
   - pdf2svg
@@ -101,7 +113,9 @@ apt_packages:
   - pinentry-gnome3
   - pkg-config
   - pop-theme
+  - ppa-purge
   - proj-bin
+  - protobuf-compiler
   - pydf
   - python-gpg
   - python-pexpect
@@ -111,7 +125,9 @@ apt_packages:
   - r-base
   - r-base-dev
   - rename
+  - ruby-ronn
   - scdaemon
+  - scons
   - shutter
   - silversearcher-ag
   - sni-qt
@@ -151,6 +167,7 @@ apt_repositories:
 # - ppa:aacebedo/fasd
   - ppa:atareao/telegram
   - ppa:jtaylor/keepass
+  - ppa:maarten-fonville/protobuf
   - ppa:mbudde/ledger
   - ppa:numix/ppa
   - ppa:obsproject/obs-studio
