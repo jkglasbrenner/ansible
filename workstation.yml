@@ -275,6 +275,16 @@
         - git
         - packages
 
+    - name: Install Notable
+      apt:
+        deb: "{{ notable_deb_url }}"
+      when:
+        - workstation_run_notable_play
+        - ansible_distribution is match("Ubuntu")
+      tags:
+        - notable
+        - packages
+
     - name: Check for CCTools installation 
       stat:
         path: "{{ cctools_install_dir }}/bin/makeflow"
