@@ -13,6 +13,7 @@ apt_packages:
   - clang-tidy
   - clang-tools
   - cmake
+  - default-jdk
   - default-jre
   - dos2unix
   - emacs-snapshot
@@ -83,6 +84,7 @@ apt_packages:
   - libudunits2-dev
   - libusb-1.0-0-dev
   - libutempter-dev
+  - libv8-dev
   - libvte-2.91-dev
   - libwebkit2gtk-4.0-dev
   - libyubikey-dev
