@@ -209,7 +209,7 @@ direnv:
   dest: '{{ lookup("env", "HOME") }}/.local/stow'
 github_classroom_assistant_version: 1.0.1
 github_classroom_assistant_deb_url: "https://github.com/education/classroom-assistant/releases/download/v{{ github_classroom_assistant_version }}/classroom-assistant_{{ github_classroom_assistant_version }}_amd64.deb"
-github_desktop_linux_version: "1.5.1-linux2"
+github_desktop_linux_version: "1.6.0-linux1"
 github_desktop_linux_deb_url: "https://github.com/shiftkey/desktop/releases/download/release-{{ github_desktop_linux_version }}/GitHubDesktop-linux-{{ github_desktop_linux_version }}.deb"
 gitkraken_arch: amd64
 gitkraken_deb_url: "https://release.gitkraken.com/linux/gitkraken-{{ gitkraken_arch }}.deb"
