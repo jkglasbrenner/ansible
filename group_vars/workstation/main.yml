@@ -90,6 +90,8 @@ apt_packages:
   - libyubikey-dev
   - libz-dev
   - mc
+  - mercurial
+  - mercurial-git
   - mono-complete
   - mono-devel
   - mpi-default-dev
