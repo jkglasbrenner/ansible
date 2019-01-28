@@ -52,7 +52,7 @@
         - configuration
         - modules
 
-    - role: franklinkim.ufw
+    - role: weareinteractive.ufw
       when: workstation_run_firewall_play
       tags:
         - firewall

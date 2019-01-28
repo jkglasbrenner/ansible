@@ -2,7 +2,7 @@
 - src: andrewrothstein.vagrant
 - src: andrewrothstein.virtualbox
 - src: angstwad.docker_ubuntu
-- src: franklinkim.ufw
+- src: weareinteractive.ufw
 - src: geerlingguy.postgresql
 - src: jkglasbrenner.aiida
 - src: jkglasbrenner.environment_modules
