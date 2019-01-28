@@ -33,7 +33,7 @@ workstation_run_firewall_play: false
 workstation_run_golang_play: false
 workstation_run_miniconda_play: true
 workstation_run_virtualbox_play: false
-workstation_run_vagrant_play: false
+workstation_run_vagrant_play: true
 workstation_run_docker_play: false
 workstation_run_ripgrep_play: true
 workstation_run_toggl_play: false
