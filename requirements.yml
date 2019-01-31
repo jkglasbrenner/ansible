@@ -1,4 +1,5 @@
 ---
+- src: andrewrothstein.rust
 - src: andrewrothstein.vagrant
 - src: andrewrothstein.virtualbox
 - src: angstwad.docker_ubuntu

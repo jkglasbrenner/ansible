@@ -113,6 +113,7 @@ apt_packages:
   - pcsc-tools
   - pcscd
   - pdf2svg
+  - peek
   - pigz
   - pinentry-curses
   - pinentry-gnome3
@@ -302,6 +303,7 @@ workstation_run_cctools_play: true
 workstation_run_veracrypt_play: false
 workstation_run_hyper_play: true
 workstation_run_gitkraken_play: true
+workstation_run_rustup_play: true
 workstation_run_github_classroom_assistant_play: true
 workstation_run_github_desktop_linux_play: true
 matsci_run_aiida_play: false

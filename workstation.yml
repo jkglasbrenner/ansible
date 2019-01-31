@@ -72,6 +72,12 @@
         - miniconda
         - aiida
 
+    - role: andrewrothstein.rust
+      when: workstation_run_rustup_play
+      tags:
+        - rust
+        - languages
+
     - role: andrewrothstein.virtualbox
       when: workstation_run_virtualbox_play
       tags:
