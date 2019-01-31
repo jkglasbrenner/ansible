@@ -161,28 +161,29 @@ apt_packages:
   - yubioath-desktop
   - zotero-standalone
 apt_repositories:
-  - "deb http://apt.insynchq.com/ubuntu {{ ansible_distribution_release }} non-free contrib"
-  - "deb http://ppa.launchpad.net/ansible/ansible/ubuntu {{ ansible_distribution_release }} main"
-  - "deb http://repository.spotify.com stable non-free"
-  - "deb https://cloud.r-project.org/bin/linux/ubuntu {{ ansible_distribution_release }}-cran35/"
-  - "deb https://dl.winehq.org/wine-builds/ubuntu/ artful main"
-  - "deb https://download.mono-project.com/repo/ubuntu stable-{{ ansible_distribution_release }} main"
-  - "deb https://apt.repos.intel.com/mkl all main"
-# - deb http://dl.google.com/linux/chrome/deb/ stable main
-# - ppa:aacebedo/fasd
-  - ppa:atareao/telegram
-  - ppa:jtaylor/keepass
-  - ppa:maarten-fonville/protobuf
-  - ppa:mbudde/ledger
-  - ppa:numix/ppa
-  - ppa:obsproject/obs-studio
-  - ppa:otto-kesselgulasch/gimp
-  - ppa:smathot/cogscinl
-  - ppa:system76/pop
-  - ppa:twodopeshaggy/jarun
-  - ppa:ubuntu-elisp/ppa
-  - ppa:ubuntuhandbook1/audacity
-  - ppa:yubico/stable
+  - repo: "deb http://apt.insynchq.com/ubuntu {{ ansible_distribution_release }} non-free contrib"
+  - repo: "deb http://ppa.launchpad.net/ansible/ansible/ubuntu {{ ansible_distribution_release }} main"
+  - repo: "deb http://repository.spotify.com stable non-free"
+  - repo: "deb https://cloud.r-project.org/bin/linux/ubuntu {{ ansible_distribution_release }}-cran35/"
+  - repo: "deb https://dl.winehq.org/wine-builds/ubuntu/ artful main"
+  - repo: "deb https://download.mono-project.com/repo/ubuntu stable-{{ ansible_distribution_release }} main"
+  - repo: "deb https://apt.repos.intel.com/mkl all main"
+# - repo: deb http://dl.google.com/linux/chrome/deb/ stable main
+# - repo: ppa:aacebedo/fasd
+  - repo: ppa:atareao/telegram
+  - repo: ppa:jtaylor/keepass
+  - repo: ppa:maarten-fonville/protobuf
+  - repo: ppa:mbudde/ledger
+  - repo: ppa:numix/ppa
+  - repo: ppa:obsproject/obs-studio
+  - repo: ppa:otto-kesselgulasch/gimp
+  - repo: ppa:peek-developers/daily
+  - repo: ppa:smathot/cogscinl
+  - repo: ppa:system76/pop
+  - repo: ppa:twodopeshaggy/jarun
+  - repo: ppa:ubuntu-elisp/ppa
+  - repo: ppa:ubuntuhandbook1/audacity
+  - repo: ppa:yubico/stable
 apt_keys:
   - url: https://dl.google.com/linux/linux_signing_key.pub
   - url: https://dl.winehq.org/wine-builds/Release.key
