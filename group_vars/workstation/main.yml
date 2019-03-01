@@ -3,6 +3,7 @@ aiida_aiidadb_password: "{{ vault_aiida_aiidadb_password }}"
 apt_packages:
   - 2to3
   - aptitude
+  - ant
   - arc-theme
   - audacity
   - automake
@@ -65,6 +66,7 @@ apt_packages:
   - libgmime-3.0-dev
   - libgtk2.0-dev
   - libgtkmm-3.0-dev
+  - libmpich-dev
   - libncurses5-dev
   - libncursesw5-dev
   - libnotmuch-dev
@@ -96,6 +98,7 @@ apt_packages:
   - mono-complete
   - mono-devel
   - mpi-default-dev
+  - mpich
   - mtr
   - network-manager-openconnect
   - network-manager-openconnect-gnome
@@ -109,6 +112,7 @@ apt_packages:
   - openbabel
   - openbabel-gui
   - openconnect
+  - openjdk-11-jdk
   - openmpi-bin
   - pcsc-tools
   - pcscd
@@ -161,6 +165,7 @@ apt_packages:
   - yubikey-piv-manager
   - yubioath-desktop
   - zotero-standalone
+  - zsh
 apt_repositories:
   - repo: "deb http://apt.insynchq.com/ubuntu {{ ansible_distribution_release }} non-free contrib"
   - repo: "deb http://ppa.launchpad.net/ansible/ansible/ubuntu {{ ansible_distribution_release }} main"
