@@ -146,8 +146,11 @@ apt_packages:
   - spotify-client
   - sshfs
   - swig
+  - tcllib
   - telegram
   - texinfo
+  - tk
+  - tk-dev
   - ttf-mscorefonts-installer
   - ubuntu-restricted-extras
   - unison
