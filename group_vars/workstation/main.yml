@@ -249,6 +249,8 @@ nvm_version: 0.33.11
 nvm_script_url: "https://raw.githubusercontent.com/creationix/nvm/v{{ nvm_version }}/install.sh"
 pandoc_version: 2.2.2
 pandoc_deb_url: "https://github.com/jgm/pandoc/releases/download/{{ pandoc_version }}/pandoc-{{ pandoc_version }}-1-amd64.deb"
+pdftk_java_version: 3.0.2-2
+pdftk_java_deb_url: "http://mirrors.kernel.org/ubuntu/pool/universe/p/pdftk-java/pdftk-java_{{ pdftk_java_version }}_all.deb"
 imaginary_teleprompter_version: 2.3.4
 imaginary_teleprompter_deb_url: "https://github.com/ImaginarySense/Teleprompter-Electron/releases/download/{{ imaginary_teleprompter_version }}/imaginary-teleprompter-{{ imaginary_teleprompter_version }}-64bit.deb"
 ripgrep_version: 0.8.1

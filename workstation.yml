@@ -248,6 +248,16 @@
         - hyper
         - packages
 
+    - name: Install PDFtk-Java
+      apt:
+        deb: "{{ pdftk_java_deb_url }}"
+      when:
+        - ansible_distribution is match("Ubuntu")
+        - ansible_distribution_version is version("18.04", "==")
+      tags:
+        - pdftk
+        - packages
+
     - name: Install GitKraken
       apt:
         deb: "{{ gitkraken_deb_url }}"
