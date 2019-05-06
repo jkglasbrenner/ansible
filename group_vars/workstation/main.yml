@@ -151,6 +151,7 @@ apt_packages:
   - texinfo
   - tk
   - tk-dev
+  - tree
   - ttf-mscorefonts-installer
   - ubuntu-restricted-extras
   - unison
