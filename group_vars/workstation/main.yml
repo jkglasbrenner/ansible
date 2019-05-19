@@ -163,6 +163,7 @@ apt_packages:
   - winehq-devel
   - xclip
   - xdotool
+  - xsltproc
   - yubico-piv-tool
   - yubikey-manager
   - yubikey-manager-qt
