@@ -244,7 +244,7 @@ modules_example_modulefiles_to_remove:
   - module-info
   - "{{ 'null' }}"
 modules_version: 4.1.2
-notable_version: 1.4.0
+notable_version: 1.5.1
 notable_desktop_arch: amd64
 notable_deb_url: "https://github.com/fabiospampinato/notable/releases/download/v{{ notable_version }}/notable_{{ notable_version }}_{{ notable_desktop_arch }}.deb"
 nvm_version: 0.33.11
