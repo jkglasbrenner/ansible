@@ -67,6 +67,7 @@ apt_packages:
   - libgmime-3.0-dev
   - libgtk2.0-dev
   - libgtkmm-3.0-dev
+  - libmagick++-dev
   - libmpich-dev
   - libncurses5-dev
   - libncursesw5-dev
