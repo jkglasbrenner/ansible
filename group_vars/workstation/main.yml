@@ -126,6 +126,7 @@ apt_packages:
   - pinentry-gnome3
   - pkg-config
   - pop-theme
+  - postgresql-client-11
   - ppa-purge
   - proj-bin
   - protobuf-compiler
